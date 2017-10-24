@@ -1,2 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700);html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #f8f8ff;
+  font-family: 'Open Sans', Helvetica, Arial, Verdana, sans-serif; }
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px; } }
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px; } }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px; } }
+
+.main {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.text-center {
+  text-align: center; }
+
+.icon-logo {
+  font-size: 9em; }
+
+.bottom-bar {
+  position: fixed;
+  height: 78px;
+  width: 100%;
+  bottom: 0;
+  background: #d54646;
+  -webkit-box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .bottom-bar p {
+    color: rgba(255, 255, 255, 0.89);
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px; }
 
 /*# sourceMappingURL=style.css.map*/
