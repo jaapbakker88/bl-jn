@@ -2,6 +2,8 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
+var helpers = require('./helpers');
+
 var indexRoutes = require('./routes/index.js');
 var apiRoutes = require('./routes/api.js');
 var adminRoutes = require('./routes/admin.js');
@@ -33,6 +35,7 @@ app.use(flash());
 
 // Set locals
 app.use(function(req, res, next) {
+  res.locals.h = helpers;
   res.locals.error = req.flash('error');
   res.locals.success = req.flash('success')
   next();
