@@ -18,7 +18,7 @@ exports.moment = require('moment');
 // exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
 // Some details about the site
-exports.siteName = `jaap.ninja`;
+exports.siteName = `Bakker Labs`;
 
 exports.menu = [
   { slug: '/stores', title: 'Stores', icon: 'store', },

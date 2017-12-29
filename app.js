@@ -16,11 +16,13 @@ mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DB, {useMongoClient: true});
 
 // Initialize app
-var app = express();
+const app = express();
+
+const stripe = require('stripe')(process.env.STRIPESECRET_KEY);
 
 // App settings
 app.set('view engine', 'pug');
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(__dirname + '/public'));
 
 var expressSession = require('express-session');
@@ -64,6 +66,7 @@ app.use(function(req, res, next){
 });
 
 // Start server
-app.listen(process.env.PORT, function(){
-  console.log('Server is started!')
+// listen for requests :)
+var listener = app.listen(process.env.PORT, function () {
+  console.log('Your app is listening on port ' + listener.address().port);
 });

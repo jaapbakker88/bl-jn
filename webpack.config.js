@@ -64,6 +64,11 @@ const config = {
     // name will be `App` because that is what we used above in our entry
     filename: '[name].bundle.js'
   },
+  externals: {
+    // require("jquery") is external and available
+    //  on the global var jQuery
+    'TweenLite': 'TweenLite'
+  },
 
   // remember we said webpack sees everthing as modules and how different loaders are responsible for different file types? Here is is where we implement them. Pass it the rules for our JS and our styles
   module: {
@@ -73,6 +78,7 @@ const config = {
   // plugins: [uglify]
   plugins: [
     // here is where we tell it to output our css to a separate file
+    // uglify,
     new ExtractTextPlugin('style.css'),
   ]
 };

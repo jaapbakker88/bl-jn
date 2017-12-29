@@ -1,59 +1,202 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
+@import './reset';
+@import './variables';
+@import './base';
+@import './grid';
+@import './type';
+
+@import './article';
+
 
 html, body {height: 100%; margin: 0; padding: 0;}
 body {
+	overflow-x: hidden;
+}
+
+main {
+	// max-width: 1440px;
+	// padding: 15px auto;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    &:before{
+        display: block;
+        content: " ";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    > .content {
+		position: absolute;
+		display:flex;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.sixteen-nine {
+  @include aspect-ratio(16,9);
+}
+
+header {
+	@include aspect-ratio(16,7);
+	background: $primary;
+	overflow: hidden;
+	.content {
+		svg {
+			width: 100%; height: 100%;
+			#logo, #logo_s{
+				visibility: hidden;
+			}
+		}
+	}
+	.logo {
+		margin: auto;
+		width: 10rem; height: 10rem;
+		z-index: 1;
+	}
+}
+
+section#work {
+	background: white;
+	position: relative;
+	display: grid;
+	grid-template-columns: 50% 1fr;
+	box-sizing: content-box;
+	padding-left: 2rem; padding-right: 2rem;
+	@media screen and (max-width: 1024px) {
+		display: block;
+		.work__grid {
+			transform: 0% 0% 0;
+		}
+		.work-content {
+			width: 100%;
+		}
+
+	}
+	@media screen and (max-width: 768px) {
+		padding-top: 4rem; padding-bottom: 4rem;
+		.work__content {
+			display: block;
+			div {
+				width: 100%;
+			}
+		}
+		.work__grid {
+			transform: none;
+			display: block;
+			width: 100%;
+			.work__item {
+				width: 100%;
+				margin: 2rem auto;
+			}
+		}
+	}
+}
+
+section#services {
+	padding: 6rem 1rem 2rem;
 	background: #f8f8ff;
- 	font-family: 'Open Sans', Helvetica, Arial, Verdana, sans-serif;
 }
 
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-
-.main {
-	height: 100vh;
+.work__content {
 	display: flex;
-	align-items: center;
+	align-items:center;
 	justify-content: center;
+	div {
+		width: 80%;
+	}
 }
 
-.text-center {text-align: center}
 
-.icon-logo {
-	font-size: 9em;
-}
-
-.bottom-bar {
-	position: fixed;
-	height: 78px;
-	width: 100%;
-	bottom: 0;
-	background: #d54646;
-	box-shadow: 0px -1px 5px rgba(0,0,0,0.2);
+.work__grid {
 	display: flex;
-	align-items: center;
-	p {
-		color: rgba(255,255,255,0.89);
-		text-align: center;
-		font-weight: bold;
-		letter-spacing: 1px
+	width: 928px;
+	flex-wrap: wrap;
+	justify-content: center;
+	transform: rotate(-8deg) translateX(100px);
+	transform-origin: 60% 50% 0;
+
+}
+
+.work__item {
+	display: block;
+	width: 54rem; //50rem
+	height: 30rem; //30rem
+	position: relative;
+	background: white;
+	color: $text-color;
+	border-radius: 2rem;
+	box-sizing: border-box;
+	box-shadow: 0 2px 14px 0 rgba(0,0,0,0.25);
+	margin: 2rem;
+	transition: all 0.5s;
+	&:hover {
+		box-shadow: 0 2px 3px 0 rgba(0,0,0,0.05);
+	}
+	.work__item-title {
+		height: 8rem; width: 100%;
+		background: white;
+		position: absolute; bottom: 0; z-index: 1;
+		border-radius: 0 0 16px 16px;
+		display: flex; flex-direction: column; justify-content: center;
+		box-sizing: border-box;
+		padding: 0 2rem; line-height: 1.2;
+		h4 {
+			font-size: 2.5rem;
+		}
+		span.category {
+			color: $primary;
+			text-transform: uppercase;
+			font-weight: 700; font-size: 2rem;
+		}
+	}
+ 	img {
+		 border-radius: inherit;
+		 width: inherit;
+		 height: inherit;
+		position: absolute;
+		object-fit: cover;
+ 	}
+}
+
+
+#blog {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding-left: 15px; padding-right: 15px;
+	display: grid !important;
+	grid-template-rows: 400px auto auto;
+	grid-template-columns: 1fr 70rem 1fr;
+	grid-template-areas: "header header header"
+							"meta meta meta"
+							"content content content";
+
+	.blogHeader {
+		grid-area: header;
+	}
+
+	.meta {
+		grid-area: meta;
+		height: 400px;
+	}
+
+	.content {
+		display: subgrid;
+		grid-area: content;
+		article {
+			 grid-row: 2 / span 1;
+		}
+	}
+
+
+
+
+	@media screen and (max-width: 768px) {
+
 	}
 }
