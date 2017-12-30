@@ -108,16 +108,21 @@ var _TweenMax = __webpack_require__(4);
 
 var _TweenMax2 = _interopRequireDefault(_TweenMax);
 
-var _headerMorph = __webpack_require__(6);
+var _svgAnimations = __webpack_require__(13);
 
-var _headerMorph2 = _interopRequireDefault(_headerMorph);
+var _svgAnimations2 = _interopRequireDefault(_svgAnimations);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _headerMorph2.default)();
+function cog() {
+  var tl = new TimelineLite();
 
-var rotateCD;
-rotateCD = new _TweenMax2.default.to('#cog', 10, { rotation: "360", ease: Linear.easeNone, repeat: -1, transformOrigin: "50% 50%" }, { timeScale: 0 });
+  tl.to('#cog_1', 15, { rotation: "360", ease: Linear.easeNone, repeat: -1, transformOrigin: "50% 50%" }, { timeScale: 0 }).to('#cog_2', 15, { rotation: "-360", ease: Linear.easeNone, repeat: -1, transformOrigin: "50% 50%" }, { timeScale: 0 });
+  tl.play();
+}
+
+(0, _svgAnimations2.default)();
+cog();
 
 /***/ }),
 /* 2 */
@@ -2358,34 +2363,7 @@ module.exports = __webpack_amd_options__;
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _MorphSVGPlugin = __webpack_require__(11);
-
-var _MorphSVGPlugin2 = _interopRequireDefault(_MorphSVGPlugin);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function headerMorph() {
-    var tl = new TimelineLite(),
-        rect = document.getElementById("rect");
-
-    tl.to(rect, 0.6, { morphSVG: "#logo_s" }, "+=1").to(rect, 0.2, { morphSVG: "#logo" }, "+=0");
-
-    tl.play();
-}
-
-exports.default = headerMorph;
-
-/***/ }),
+/* 6 */,
 /* 7 */,
 /* 8 */,
 /* 9 */
@@ -3342,6 +3320,34 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   }
 }("undefined" != typeof module && module.exports && "undefined" != typeof global ? global : undefined || window, "TweenLite");
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _MorphSVGPlugin = __webpack_require__(11);
+
+var _MorphSVGPlugin2 = _interopRequireDefault(_MorphSVGPlugin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function headerMorph() {
+    var tl = new TimelineLite(),
+        rect = document.getElementById("rect");
+
+    tl.to(rect, 0.6, { morphSVG: "#logo_s" }, "+=1").to(rect, 0.2, { morphSVG: "#logo" }, "+=0");
+
+    tl.play();
+}
+
+exports.default = headerMorph;
 
 /***/ })
 /******/ ]);
