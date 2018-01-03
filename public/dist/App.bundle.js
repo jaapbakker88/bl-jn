@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -95,20 +95,29 @@ module.exports = g;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+
+/* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(2);
+__webpack_require__(3);
 
-var _bling = __webpack_require__(3);
+var _bling = __webpack_require__(4);
 
-var _TweenMax = __webpack_require__(4);
+var _TweenMax = __webpack_require__(5);
 
 var _TweenMax2 = _interopRequireDefault(_TweenMax);
 
-var _svgAnimations = __webpack_require__(13);
+var _svgAnimations = __webpack_require__(6);
 
 var _svgAnimations2 = _interopRequireDefault(_svgAnimations);
 
@@ -120,18 +129,19 @@ function cog() {
   tl.to('#cog_1', 15, { rotation: "360", ease: Linear.easeNone, repeat: -1, transformOrigin: "50% 50%" }, { timeScale: 0 }).to('#cog_2', 15, { rotation: "-360", ease: Linear.easeNone, repeat: -1, transformOrigin: "50% 50%" }, { timeScale: 0 });
   tl.play();
 }
+window.cog = cog;
 
 (0, _svgAnimations2.default)();
-cog();
+// cog;
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -160,7 +170,7 @@ exports.$ = $;
 exports.$$ = $$;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1873,7 +1883,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 o[p] = c[p];
               }
             } else c[b] && (c[b][n] = o);
-          } else "function" == "function" && __webpack_require__(5) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+          } else "function" == "function" && __webpack_require__(1) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
             return o;
           }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));for (p = 0; p < this.sc.length; p++) {
@@ -2354,26 +2364,35 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports) {
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
-module.exports = __webpack_amd_options__;
+"use strict";
 
-/* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _MorphSVGPlugin = __webpack_require__(7);
+
+var _MorphSVGPlugin2 = _interopRequireDefault(_MorphSVGPlugin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function headerMorph() {
+    var tl = new TimelineLite(),
+        rect = document.getElementById("rect");
+
+    tl.to(rect, 0.6, { morphSVG: "#logo_s" }, "+=1").to(rect, 0.2, { morphSVG: "#logo" }, "+=0");
+
+    tl.play();
+}
+
+exports.default = headerMorph;
 
 /***/ }),
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */
-/***/ (function(module, exports) {
-
-module.exports = TweenLite;
-
-/***/ }),
-/* 10 */,
-/* 11 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2771,7 +2790,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
   "use strict";
   var b = function b() {
     return (_gsScope.GreenSockGlobals || _gsScope)[a];
-  };"undefined" != typeof module && module.exports ? (__webpack_require__(12), module.exports = b()) : "function" == "function" && __webpack_require__(5) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(9)], __WEBPACK_AMD_DEFINE_FACTORY__ = (b),
+  };"undefined" != typeof module && module.exports ? (__webpack_require__(8), module.exports = b()) : "function" == "function" && __webpack_require__(1) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(9)], __WEBPACK_AMD_DEFINE_FACTORY__ = (b),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -2779,7 +2798,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2841,7 +2860,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 o[p] = c[p];
               }
             } else c[b] && (c[b][n] = o);
-          } else "function" == "function" && __webpack_require__(5) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+          } else "function" == "function" && __webpack_require__(1) && !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
             return o;
           }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));for (p = 0; p < this.sc.length; p++) {
@@ -3322,32 +3341,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 9 */
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _MorphSVGPlugin = __webpack_require__(11);
-
-var _MorphSVGPlugin2 = _interopRequireDefault(_MorphSVGPlugin);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function headerMorph() {
-    var tl = new TimelineLite(),
-        rect = document.getElementById("rect");
-
-    tl.to(rect, 0.6, { morphSVG: "#logo_s" }, "+=1").to(rect, 0.2, { morphSVG: "#logo" }, "+=0");
-
-    tl.play();
-}
-
-exports.default = headerMorph;
+module.exports = TweenLite;
 
 /***/ })
 /******/ ]);

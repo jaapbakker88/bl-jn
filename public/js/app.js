@@ -13,6 +13,7 @@ function cog() {
     .to('#cog_2', 15, { rotation: "-360", ease: Linear.easeNone, repeat: -1, transformOrigin: "50% 50%" }, { timeScale: 0 })
   tl.play();
 }
+window.cog = cog;
 
 headerMorph();
-cog();
+// cog;
