@@ -134,6 +134,13 @@ window.cog = cog;
 (0, _svgAnimations2.default)();
 // cog;
 
+
+var ticker = document.querySelector('.ticker'),
+    list = document.querySelector('.work__grid'),
+    clone = list.cloneNode(true);
+
+ticker.append(clone);
+
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {

@@ -94,6 +94,11 @@ html {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 42%;
             flex: 0 0 42%; }
+    @media (max-width: 768px) {
+      .column.is-5 {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%; } }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -243,6 +248,8 @@ body {
   overflow-x: hidden; }
 
 main {
+  max-width: 1440px;
+  padding: 15px auto;
   margin: 0 auto;
   overflow: hidden; }
 
@@ -295,21 +302,13 @@ header {
 section#work {
   background: white;
   position: relative;
-  display: grid;
-  grid-template-columns: 50% 1fr;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   padding-left: 2rem;
   padding-right: 2rem; }
   @media screen and (max-width: 1024px) {
-    section#work {
-      display: block; }
-      section#work .work__grid {
-        -webkit-transform: 0% 0% 0;
-            -ms-transform: 0% 0% 0;
-                transform: 0% 0% 0; }
-      section#work .work-content {
-        width: 100%; } }
+    section#work .work-content {
+      width: 100%; } }
   @media screen and (max-width: 768px) {
     section#work {
       padding-top: 4rem;
@@ -332,35 +331,30 @@ section#services {
   padding: 6rem 1rem 2rem;
   background: #f8f8ff; }
 
-.work__content {
+.ticker {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-  .work__content div {
-    width: 80%; }
+  display: flex; }
+  .ticker:hover .work__grid {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; }
 
 .work__grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 928px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transform: rotate(-8deg) translateX(100px);
-      -ms-transform: rotate(-8deg) translateX(100px);
-          transform: rotate(-8deg) translateX(100px);
-  -webkit-transform-origin: 60% 50% 0;
-      -ms-transform-origin: 60% 50% 0;
-          transform-origin: 60% 50% 0; }
+  -webkit-animation: ticker 120s infinite;
+          animation: ticker 120s infinite; }
+
+@-webkit-keyframes ticker {
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); } }
+
+@keyframes ticker {
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); } }
 
 .work__item {
   display: block;

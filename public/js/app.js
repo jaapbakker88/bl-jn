@@ -17,3 +17,10 @@ window.cog = cog;
 
 headerMorph();
 // cog;
+
+
+var ticker = document.querySelector('.ticker')
+  , list = document.querySelector('.work__grid')
+  , clone = list.cloneNode(true)
+
+ticker.append(clone)

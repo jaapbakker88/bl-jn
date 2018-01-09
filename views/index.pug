@@ -12,30 +12,45 @@ block content
             path(id="logo_s" d='M387.640153 162.549938c3.448825-3.445133 21.356448-3.354399 24.714441 0 3.538618 3.534829 3.51578 21.175968 0 24.687985-3.687754 3.683806-21.028763 3.681732-24.714441 0-3.557476-3.553668-3.482734-21.208979 0-24.687985zm16.692579 21.937372c1.050074 0 1.958648-.446415 2.331014-1.153239h.1415v1.026755h2.561881v-5.647154c0-1.785662-1.303283-2.827297-3.589613-2.827297-2.241646 0-3.70877.996994-3.827927 2.604089h2.368251c.171288-.438975.618128-.669623 1.31073-.669623.729838 0 1.146888.334812 1.146888.892831v.647302l-1.809701.104164c-2.137383.126484-3.314061 1.004434-3.314061 2.514806 0 1.517812 1.08731 2.507366 2.681038 2.507366zm.960706-1.837743c-.662812 0-1.102205-.327371-1.102205-.855629 0-.498497.409603-.803548 1.191573-.86307l1.39265-.089283v.543139c0 .714264-.647917 1.264843-1.482018 1.264843zm-8.672562 1.711259c2.301225 0 3.753454-1.212762 3.753454-3.095146 0-1.369007-1.08731-2.462725-2.494855-2.537128v-.141364c1.139441-.156246 2.003332-1.130919 2.003332-2.284159 0-1.666617-1.266046-2.678492-3.410877-2.678492h-5.012052v10.736289h5.160998zm-2.427829-8.809263h1.549045c.930916 0 1.474571.461296 1.474571 1.227642 0 .758906-.580892 1.220202-1.578834 1.220202h-1.444782v-2.447844zm0 6.882237v-2.775216h1.638413c1.131994 0 1.765017.491057 1.765017 1.369007 0 .907712-.618129 1.406209-1.750123 1.406209h-1.653307zm.696605-12.989397c.921791 0 1.57359-.585789 1.57359-1.414067 0-.746541-.550893-1.299635-1.295416-1.299635-.455441 0-.809976.204345-.984516.572166h-.051817c-.035453-.727468.272719-1.228795.758159-1.228795.267265 0 .482713.138955.545439.354198h.979061c-.103633-.662078-.72816-1.12526-1.521772-1.12526-1.055423 0-1.707222.798308-1.707222 2.087044 0 .577616.139087 1.068044.403624 1.416793.283628.414139.741796.637556 1.30087.637556zm-.008181-.768337c-.349081 0-.619072-.27246-.619072-.621209 0-.3433.267264-.607586.619072-.607586.354535 0 .621799.264286.621799.613035 0 .346025-.272719.61576-.621799.61576zm-3.906755.771062c.949063 0 1.576316-.58034 1.576316-1.430415 0-.765613-.534529-1.318707-1.281779-1.318707-.403624 0-.681798.158027-.834521.403241h-.051816l.073634-.912741h1.846308v-.779236h-2.618103l-.185449 2.302287h.880883c.12545-.198895.321808-.324227.599982-.324227.365443 0 .627253.261562.627253.653904 0 .384169-.259083.634832-.624526.634832-.32999 0-.591801-.190722-.638163-.47953h-.908154c.013635.713846.624526 1.250592 1.538135 1.250592z')
 
 
-
-      //- h1.h1 jaap.ninja
     section#work
+
+
       .work__content.typography
-        div
-          h3.h3 Recent Projects
-          p Lorem ipsum dolor sit amet <a href="#">consectetur</a> adipisicing elit. Expedita dolores debitis, dicta dolorum quisquam odio delectus deleniti ratione cum rem voluptatibus numquam. Quam iure tempore expedita, accusantium labore maiores. Sapiente.
-          a.main__link(href="/projects") See all projects
-      .work__grid
-        a.work__item(href='/projects/party-with')
-          .work__item-title
-            span.category Case Study
-            h4.h5 Party with a Local
-          img(src="https://drugo-more.hr/wp-content/uploads/2015/04/party-06.jpg")
-        a.work__item(href='/projects/partylist')
-          .work__item-title
-            span.category Side Project
-            h4.h5 PartyList
-          img(src="https://cdn.flixbus.de/city_description_images/amsterdam-nightlife.jpg")
-        a.work__item(href='/projects/secrethub')
-          .work__item-title
-            span.category Work
-            h4.h5 SecretHub
-          img(src="https://geant3plus.archive.geant.net/Resources/PartnerResources/Partner%20Resources%20Image%20Library/Image%2020_000003529661.jpg")
+        div.columns.is-centered
+          .column.is-5.has-centered-text
+            h3.h3 Recent Projects
+            p Lorem ipsum dolor sit amet <a href="#">consectetur</a> adipisicing elit. Expedita dolores debitis, dicta dolorum quisquam odio delectus deleniti ratione cum rem voluptatibus numquam. Quam iure tempore expedita, accusantium labore maiores. Sapiente.
+            a.main__link(href="/projects") See all projects
+      .ticker
+        .work__grid
+          a.work__item(href='/projects/party-with')
+            .work__item-title
+              span.category Case Study
+              h4.h5 Party with a Local
+            img(src="https://drugo-more.hr/wp-content/uploads/2015/04/party-06.jpg")
+          a.work__item(href='/projects/partylist')
+            .work__item-title
+              span.category Side Project
+              h4.h5 PartyList
+            img(src="https://cdn.flixbus.de/city_description_images/amsterdam-nightlife.jpg")
+          a.work__item(href='/projects/secrethub')
+            .work__item-title
+              span.category Work
+              h4.h5 SecretHub
+            img(src="https://geant3plus.archive.geant.net/Resources/PartnerResources/Partner%20Resources%20Image%20Library/Image%2020_000003529661.jpg")
+          a.work__item(href='/projects/waar-is-de-after')
+            .work__item-title
+              span.category Concept
+              h4.h5 Waar is de After?
+            img(src="/images/src/waar-is-de-after.jpg")
+          a.work__item(href='/projects/social-jobs')
+            .work__item-title
+              span.category Side Project
+              h4.h5 Social Jobs?
+            img(src="/images/src/social-jobs.jpg")
+
+
+
     section#services.typography.has-centered-text
       .columns.is-centered.is-multiline
         .column.is-4
