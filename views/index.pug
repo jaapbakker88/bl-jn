@@ -13,8 +13,6 @@ block content
 
 
     section#work
-
-
       .work__content.typography
         div.columns.is-centered
           .column.is-5.has-centered-text
@@ -46,7 +44,7 @@ block content
           a.work__item(href='/projects/social-jobs')
             .work__item-title
               span.category Side Project
-              h4.h5 Social Jobs?
+              h4.h5 Social Jobs
             img(src="/images/src/social-jobs.jpg")
 
 
@@ -71,5 +69,26 @@ block content
 
           h4.h5 Development
           p A custom build CMS or the framework of your choice, it's never a problem with us. We have extensive experience building both.
+
+    section#contact
+      .columns.is-centered.typography
+        .column.is-5.has-centered-text
+          h3.h3 Get in touch
+
+
+      .container
+        .columns 
+          .column.typography
+            .columns
+              //- .column
+              //-   svg(width='101', height='101', xmlns='http://www.w3.org/2000/svg')
+              //-     path(d='M89.738 27.445c-.111.077-.226.15-.345.219l-36.373 21a4.986 4.986 0 0 1-1.791.62 4.99 4.99 0 0 1-4.205-.652l-34.82-23.486a5.074 5.074 0 0 1-.28-.203c-4.987 17.493-3.639 51.404 4.38 59.415 10.197 10.186 58.174 10.192 68.377 0 7.573-7.565 9.288-38.824 5.057-56.913zm-3.32-9.09c-.54-.91-1.119-1.683-1.737-2.3-9.29-9.28-58.835-9.532-68.377 0l-.092.093a4.99 4.99 0 0 1 1.584.707l32.43 21.874 34.167-19.726a4.982 4.982 0 0 1 2.025-.648zm-77.53-9.77c11.612-11.599 71.9-11.293 83.206 0 11.913 11.9 11.836 71.292 0 83.116-12.416 12.402-70.797 12.395-83.205 0-11.977-11.964-11.726-71.404 0-83.116z', fill='#1EAAF1', fill-rule='evenodd')
+              .column
+                p Anna Bijnsstraat 24-hs <br>Amsterdam<br>+31 (0) 6 36 12 14 42
+                p 
+                  a.main__link(href="/contact") Or send a message now
+          .column
+            img.map(src="https://maps.googleapis.com/maps/api/staticmap?center=Amsterdam+,The&zoom=13&size=600x300&maptype=roadmap&markers=color:red%7Clabel:BL%7CHerengracht+182+,Amsterdam&key=AIzaSyBQZA2OfHeyBSyuQFXUe3uayopQGyTTFrE")
+
 
 
