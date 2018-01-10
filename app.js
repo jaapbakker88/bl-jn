@@ -1,6 +1,10 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser'),
+    cloudinary = require('cloudinary'),
+    multer = require('multer'),
+    methodOverride = require('method-override');
+
 
 var helpers = require('./helpers');
 
@@ -18,12 +22,19 @@ mongoose.connect(process.env.DB, {useMongoClient: true});
 // Initialize app
 const app = express();
 
-const stripe = require('stripe')(process.env.STRIPESECRET_KEY);
+
+// Cloudinary global config
+cloudinary.config({ 
+  cloud_name: process.env.CLOUD_NAME, 
+  api_key: process.env.CLOUDINARY_API_KEY, 
+  api_secret: process.env.CLOUDINARY_SECRET 
+});
 
 // App settings
 app.set('view engine', 'pug');
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
+app.use(methodOverride('_method'));
 
 var expressSession = require('express-session');
 app.use(expressSession({

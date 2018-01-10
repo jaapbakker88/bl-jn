@@ -1,0 +1,34 @@
+extends layout
+
+block content
+
+  .project
+    .header
+      img(src=`${work.image}`)
+      h2.h2= work.name
+    .content
+      .ol
+        .container
+          h3.h3= work.description
+
+      .gl
+        svg(width='0', height='0', xmlns='http://www.w3.org/2000/svg')
+          clipPath#clipPath
+            path(d='M17.601 17C40.593-5.968 159.977-5.363 182.364 17c23.59 23.565 23.438 141.173 0 164.586-24.585 24.559-140.192 24.545-164.763 0C-6.115 157.895-5.617 40.193 17.601 17z' width="200" height="200")
+   
+
+        .container
+          .columns
+            .column
+              img(src=`https://placehold.it/200x200?text=image1`)
+            .column
+              img(src=`https://placehold.it/200x200?text=image2`)
+            .column
+              img(src=`https://placehold.it/200x200?text=image3`)
+  
+
+  .container
+    hr
+    .codeContent
+      code
+        pre= h.dump(work)

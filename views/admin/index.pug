@@ -1,0 +1,51 @@
+extends admin
+
+block content
+  .container
+    table.full-width
+      thead
+        tr
+          td Name
+          td Category
+          td &nbsp;
+          td Edit
+          td Delete
+      tbody
+        for item in work
+          tr
+            td=item.name
+            td=item.category
+            td
+              a(href=`/projects/${item.slug}` target="_blank") view
+            td
+              a(href=`/admin/work/${item.id}/edit`) edit
+            td 
+              form(action=`/admin/work/${item.id}/delete?_method=DELETE` method="POST")
+                button(type="submit") delete
+
+  
+  .container
+    hr
+
+    h3.h3 new project  
+    form(action="/admin/work/add" method="POST" enctype="multipart/form-data")
+      .field
+        label.label Name
+        .control
+          input.input(type="text" placholder="name" name="work[name]" required)
+      .field
+        label.label Category
+        .control
+          input.input(type="text" placholder="City" name="work[category]" required)
+      .field
+        label.label Description
+        .control
+          textarea.input(type="text" placholder="City" name="work[description]" required)
+      .field
+        label.label Image
+        .control
+          input.input(type="file" placholder="Upload" name="image")
+      .field
+        .control
+          button.button.is-primary.is-outlined Submit
+

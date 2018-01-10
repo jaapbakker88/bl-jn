@@ -1,0 +1,24 @@
+extends admin
+
+block content
+  h3.h3 New Work Item  
+  form(action=`/admin/work/${work.id}/edit?_method=PUT` method="POST" enctype="multipart/form-data")
+    .field
+      label.label Name
+      .control
+        input.input(type="text" placholder="name" name="work[name]" value=work.name required)
+    .field
+      label.label Category
+      .control
+        input.input(type="text" placholder="City" name="work[category]" value=work.category required)
+    .field
+      label.label Description
+      .control
+        textarea.input(type="text" placholder="City" name="work[description]" required)= work.description
+    .field
+      label.label Image
+      .control
+        input.input(type="file" placholder="Upload" name="image")
+    .field
+      .control
+        button.button.is-primary.is-outlined Submit

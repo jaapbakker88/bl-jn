@@ -5,6 +5,7 @@
 @import './type';
 
 @import './article';
+@import './project';
 
 
 html, body {height: 100%; margin: 0; padding: 0;}
@@ -81,9 +82,13 @@ section#work {
 			}
 		}
 		.work__grid {
+
 			transform: none;
 			display: block;
 			width: 100%;
+			&:nth-child(2) {
+				display: none;
+			}
 			.work__item {
 				width: 100%;
 				margin: 2rem auto;
@@ -100,8 +105,16 @@ section#services {
 
 .ticker {
 	display: flex;
+	transform: rotate(3deg);
+	transform-origin: 0 0 100%;
 	&:hover .work__grid {
 		animation-play-state: paused;
+	}
+	@media screen and (max-width: 768px) {
+		transform: rotate(0deg);
+		.work__grid {
+			animation: none;
+		}
 	}
 }
 
@@ -207,3 +220,69 @@ section#contact {
 
 	}
 }
+
+
+
+.admin {
+
+	h2 {
+		margin: 3rem 0;
+		a {
+			color: $text-color;
+			text-decoration: none
+		}
+	}
+
+	table {
+		&.full-width {width: 100%;}
+		thead {
+			background: #f8f8ff;
+			border-top: 3px solid $primary;
+			td {
+				padding: 5px 10px;
+				font-weight: 700;
+			}
+		}
+		tbody{
+			tr {
+				background: #fff;
+				td {
+					padding: 5px 10px;
+				}
+				&:nth-child(2n) {
+					background: #f8f8ff;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+pre {
+        font-family: "Courier 10 Pitch", Courier, monospace;
+        font-size: 95%;
+        line-height: 140%;
+        white-space: pre;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -o-pre-wrap;
+    }       
+    
+    code {
+        font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+        font-size: 95%;
+        line-height: 140%;
+        white-space: pre;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -o-pre-wrap;
+        background: #faf8f0;
+    }
+    
+    .codeContent code {
+        display: block;
+        padding: 0.5em 1em;
+        border: 1px solid #bebab0;
+    }
