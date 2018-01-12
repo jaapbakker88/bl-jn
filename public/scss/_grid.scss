@@ -27,6 +27,9 @@
   &.is-centered {
     justify-content: space-around;
   }
+  &.is-centered-2 {
+    justify-content: space-between;
+  }
   &.is-multiline {
     flex-wrap: wrap;
   }
@@ -34,6 +37,13 @@
 .column {
   flex: 1;
   &.is-4 { flex: 0 0 33.3333%;
+    width: 33.3333%;
+    @media (max-width: 768px) {
+      flex: 0 0 100%;
+    }
+  }
+  &.is-200 { flex: 0 0 200px;
+    width: 200px;
     @media (max-width: 768px) {
       flex: 0 0 100%;
     }

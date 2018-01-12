@@ -1,24 +1,53 @@
 extends admin
 
 block content
-  h3.h3 New Work Item  
-  form(action=`/admin/work/${work.id}/edit?_method=PUT` method="POST" enctype="multipart/form-data")
-    .field
-      label.label Name
-      .control
-        input.input(type="text" placholder="name" name="work[name]" value=work.name required)
-    .field
-      label.label Category
-      .control
-        input.input(type="text" placholder="City" name="work[category]" value=work.category required)
-    .field
-      label.label Description
-      .control
-        textarea.input(type="text" placholder="City" name="work[description]" required)= work.description
-    .field
-      label.label Image
-      .control
-        input.input(type="file" placholder="Upload" name="image")
-    .field
-      .control
-        button.button.is-primary.is-outlined Submit
+  .container
+    h3.h3 Editing #{work.name} 
+        h4.h4
+          a(href=`/admin/work/${work.id}/gallery`) View Gallery
+
+        form(action=`/admin/work/${work.id}/edit?_method=PUT` method="POST" enctype="multipart/form-data")
+          .columns
+            .column
+              .field
+                label.label Name
+                .control
+                  input.input(type="text" placholder="name" name="work[name]" value=work.name required)
+              .field
+                label.label Category
+                .control
+                  input.input(type="text" placholder="City" name="work[category]" value=work.category required)
+              .field
+                label.label Oneliner
+                .control
+                  input.input(type="text" placholder="City" name="work[description]" value=work.description,  required)
+              .field
+                label.label Status
+                .control
+                  select.input(type="text" placholder="City" name="work[status]")
+                    option(value="finished") finished
+                    option(value="ongoing") ongoing
+            .column
+              .field
+                label.label Tags
+                .control
+                  input.input(type="text" placholder="City" name="tags" value=work.tags.join(', '))
+              .field
+                label.label URL
+                .control
+                  input.input(type="text" placholder="City" name="work[url]" value=work.url)
+              
+              label.label Image
+              .field.image
+                .control
+                  input.input(type="file" placholder="Upload" name="image")
+                if work.image 
+                  img(src=work.image)
+          .field
+            label.label Background
+            .control
+              textarea.body#mdeditor(name="background")= work.background
+          footer
+            button.button.is-primary.is-outlined Update
+
+        

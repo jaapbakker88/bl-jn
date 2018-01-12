@@ -6,9 +6,16 @@ mongoose.Promise = global.Promise;
 var workSchema = new mongoose.Schema({
   name: {type: String, default: ''},
   category: {type: String, default: ''},
+  status: {type: String, default: 'finished'},
   description: {type: String, default: ''},
   image: {type: String, default: ''},
-  url: {type: String, default: ''}
+  gallery: [{
+  	name: String,
+  	url: String
+  }],
+  tags: [String],
+  url: {type: String, default: ''},
+  background: {type: String, default: ''}
 },
 {
   timestamps: true

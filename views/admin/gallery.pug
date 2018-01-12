@@ -1,0 +1,22 @@
+extends admin
+
+block content
+  .container
+    h3.h3 Gallery for 
+      a(href=`/admin/work/${work.id}/edit`)= work.name
+    .box.rect
+      form(action=`/admin/work/${work.id}/gallery?_method=PUT` method="POST" enctype="multipart/form-data")
+        label.label Add Image to Gallery
+        .control
+          input.input(type="file" placholder="Upload" name="image")          
+          button(type="submit") add to gallery 
+    hr
+    .gallery
+      each item in work.gallery
+        div.box
+          form(action=`/admin/work/${work.id}/gallery/${item._id}?_method=DELETE` method="POST")
+            button(type="submit") delete
+          img(src=item.url, class="img-responsive")
+
+
+

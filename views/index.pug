@@ -24,7 +24,7 @@ block content
           each item in work 
             a.work__item(href=`/projects/${item.slug}`)
               .work__item-title
-                span.category= item.category
+                span.category(class=h.slugify(item.category))= item.category
                 h4.h5= item.name
               img(src=item.image)
 
@@ -69,9 +69,10 @@ block content
                 p 
                   a.main__link(href="/contact") Or send a message now
           .column
-            img.map(src="https://maps.googleapis.com/maps/api/staticmap?center=Amsterdam+,The&zoom=13&size=600x300&maptype=roadmap&markers=color:red%7Clabel:BL%7CHerengracht+182+,Amsterdam&key=AIzaSyBQZA2OfHeyBSyuQFXUe3uayopQGyTTFrE")
-    section#dump 
-      .container= work
+            img.map(src="https://maps.googleapis.com/maps/api/staticmap?center=Amsterdam+,The&zoom=13&size=600x200&maptype=roadmap&markers=color:red%7Clabel:BL%7CHerengracht+182+,Amsterdam&key=AIzaSyBQZA2OfHeyBSyuQFXUe3uayopQGyTTFrE")
+    .container.codeContent
+      code
+        pre= h.dump(work)
 
 
 

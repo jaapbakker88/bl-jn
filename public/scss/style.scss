@@ -6,6 +6,7 @@
 
 @import './article';
 @import './project';
+@import './admin';
 
 
 html, body {height: 100%; margin: 0; padding: 0;}
@@ -159,6 +160,9 @@ section#services {
 			color: $primary;
 			text-transform: uppercase;
 			font-weight: 700; font-size: 2rem;
+			&.case-study {color: $gamma;}
+			&.work {color: $delta;}
+			&.side-project {color: $secondary;}
 		}
 	}
  	img {
@@ -177,7 +181,7 @@ section#contact {
 
 	.map {
 		width: 100%;
-		height: 300px;
+		height: 200px;
 		background: url('https://placehold.it/400x200');
 		border-radius: 10px;
 		object-fit: cover;
@@ -223,40 +227,10 @@ section#contact {
 
 
 
-.admin {
 
-	h2 {
-		margin: 3rem 0;
-		a {
-			color: $text-color;
-			text-decoration: none
-		}
-	}
-
-	table {
-		&.full-width {width: 100%;}
-		thead {
-			background: #f8f8ff;
-			border-top: 3px solid $primary;
-			td {
-				padding: 5px 10px;
-				font-weight: 700;
-			}
-		}
-		tbody{
-			tr {
-				background: #fff;
-				td {
-					padding: 5px 10px;
-				}
-				&:nth-child(2n) {
-					background: #f8f8ff;
-				}
-			}
-		}
-	}
+.img-responsive {
+	display: block; max-width: 100%; height: auto;
 }
-
 
 
 

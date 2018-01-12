@@ -17,6 +17,16 @@ exports.dump = (obj) => JSON.stringify(obj, null, 2);
 // // inserting an SVG
 // exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
+exports.slugify = function(text) {
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-')           // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+    .replace(/^-+/, '')             // Trim - from start of text
+    .replace(/-+$/, '');            // Trim - from end of text
+}
+
+
 // Some details about the site
 exports.siteName = `Bakker Labs`;
 

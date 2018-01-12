@@ -4,9 +4,10 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
 
-    title= h.siteName
+    title Admin - #{h.siteName}
 
     link(rel="stylesheet" type="text/css" href="/dist/style.css")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css")
   body.admin
     .container 
       h2.h2
@@ -17,4 +18,9 @@ html
     footer
 
     script(src="/dist/App.bundle.js")
+    script(src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js")
+    script.
+      var simplemde = new SimpleMDE({ element: document.getElementById("mdeditor") });
+
+  
     block scripts

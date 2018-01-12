@@ -1,0 +1,156 @@
+.admin {
+	margin-bottom: 200px; margin-top: 100px;
+
+	.box {
+		display: flex; align-items: center;
+		background: #fff;
+		border: 1px solid #f8f8ff;
+		padding: 2rem;
+		&:hover {
+			background: #f8f8ff;
+		}
+		&.rect {
+			height: 100px;
+			width: 460px;
+			min-width: 460px;
+		}
+	}
+
+	h2 {
+		margin: 3rem 0;
+		a {
+			color: $text-color;
+			text-decoration: none
+		}
+	}
+
+	table {
+		&.full-width {width: 100%;}
+		thead {
+			background: #f8f8ff;
+			border-top: 3px solid $primary;
+			td {
+				padding: 5px 10px;
+				font-weight: 700;
+			}
+		}
+		tbody{
+			tr {
+				background: #fff;
+				td {
+					padding: 5px 10px;
+				}
+				&:nth-child(2n) {
+					background: #f8f8ff;
+				}
+			}
+		}
+	}
+}
+
+
+.admin .gallery {
+	.box {
+		position: relative;
+		display: flex;
+		align-items: center; justify-content: center;
+		width: 200px;
+		height: 200px;
+		float: left;
+		padding: 7px;
+		margin: 7px;
+		border: 1px solid #f8f8ff;
+		&:hover{
+			background: #f8f8ff;
+		}
+	} 
+	form {
+		z-index:3;
+	} 
+	img {
+		position: absolute;
+		width: inherit;
+		height: inherit;
+		object-fit: cover;
+	}
+}
+
+.admin textarea.body {
+	width: 100%;
+	min-height: 200px;
+	font-size: 2rem;
+	padding: 1rem;
+	border-radius: 10px;
+	border: 1px solid #f8f8ff;
+	color: lighten($text-color, 20%);
+	margin-bottom: 100px;
+	&:focus {
+		color: $text-color;
+		outline: none;
+		border: 1px solid darken(#f8f8ff, 10%);
+	}
+}
+
+.admin {
+	.field {
+		margin: 1rem; 
+		.label {
+			font-weight: bold;  
+		}
+	}
+	.control {
+		box-sizing: border-box;
+		width: 100%;
+		input, textarea {
+			box-sizing: border-box;
+			width: 100%;
+			font-size: 2rem;
+			padding: 1.5rem;
+			border-radius:4px;
+			border: 1px solid #c9c9c9;
+			color: lighten($text-color, 20%);
+			&:focus {
+				color: $text-color;
+				outline: none;
+				border: 1px solid darken(#f8f8ff, 10%);
+			}
+		}
+	}
+}
+
+.admin form .field.image {
+	height: 200px;
+	position: relative;
+	display: flex; align-items: center;
+	.control {
+		height: inherit;
+		display: flex; align-items:center;
+		z-index: 3;
+		input {background: transparent; height: inherit; border: none;}
+	}
+	
+	img {
+		display: block;
+		width: 100%;
+		height: inherit;
+		box-sizing: border-box;
+		position: absolute;
+		object-fit: cover;
+		opacity: 0.5;
+		z-index: 1;
+		border-radius: 4px;  
+	}
+}
+
+.admin form footer {
+	position: fixed; top: 0; left: 0;
+	height: 60px; width: 100%;
+	background: $darker;
+	z-index: 100; 
+	button {
+		height: 100%;
+		background: $darkest;
+		border: 1px solid transparent;
+		font-size: 16px; color: #fff;
+	}
+}

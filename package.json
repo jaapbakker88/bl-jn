@@ -26,7 +26,7 @@
     "multer": "^1.3.0",
     "multer-storage-cloudinary": "^2.2.1",
     "pug": "^2.0.0-rc.4",
-    "stripe": "^5.1.1"
+    "showdown": "^1.8.6"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",

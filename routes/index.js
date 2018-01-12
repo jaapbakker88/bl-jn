@@ -1,14 +1,23 @@
 var express = require('express');
 var router = express.Router();
+var showdown = require('showdown');
 var mongoose = require('mongoose'),
 	Work = require('../models/work');
 
-var work =  require('../data/work');
+var workOld =  require('../data/work');
 
 require('dotenv').config()
 
 router.get('/', function(req, res){
-  res.render('index', {work: work});
+  Work.find({}, function(err, work){
+  	if(err) {
+  		console.log(err);
+  		res.render('index', {work: workOld});
+  	} else {
+  		res.render('index', {work: work});
+  	}
+  })
+  
 });
 
 router.get('/about', function(req, res){
@@ -25,6 +34,9 @@ router.get('/projects/:slug', function(req,res){
 			console.log(err);
 			res.redirect('/');
 		} else {
+      var converter         = new showdown.Converter();
+      var backgroundHtml    = converter.makeHtml(work[0].background);
+      work[0].background = backgroundHtml;
 			res.render('project', {work: work[0]})
 		}
 	})

@@ -5,30 +5,52 @@ block content
   .project
     .header
       img(src=`${work.image}`)
-      h2.h2= work.name
+      .inner
+        a(href="/")
+          svg(class="logo" viewBox="0 0 65 65" width='65', height='65', xmlns='http://www.w3.org/2000/svg')
+            path(d='M5.72 5.525c7.473-7.465 46.273-7.268 53.548 0 7.667 7.659 7.618 45.881 0 53.49-7.99 7.982-45.562 7.978-53.548 0-7.708-7.7-7.546-45.952 0-53.49zM41.907 53c2.314 0 4.316-.986 5.136-2.548h.312v2.269H53V40.246C53 36.3 50.128 34 45.09 34c-4.938 0-8.171 2.202-8.434 5.753h5.219c.377-.97 1.361-1.48 2.888-1.48 1.608 0 2.527.74 2.527 1.973v1.43l-3.988.23c-4.71.28-7.302 2.219-7.302 5.555C36 50.814 38.396 53 41.907 53zm2.652-4C43.02 49 42 48.276 42 47.107c0-1.103.951-1.778 2.767-1.91L48 45v1.202C48 47.782 46.496 49 44.56 49zM25 53c4.905 0 8-2.598 8-6.63 0-2.933-2.317-5.276-5.317-5.436v-.303a4.953 4.953 0 0 0 4.27-4.893c0-3.57-2.699-5.738-7.27-5.738H14v23h11zm-5-19h3.586c2.155 0 3.414.942 3.414 2.508C27 38.058 25.655 39 23.345 39H20v-5zm0 15v-6h3.37c2.328 0 3.63 1.062 3.63 2.96 0 1.962-1.271 3.04-3.6 3.04H20zm1.64-29c1.968 0 3.36-1.273 3.36-3.073 0-1.622-1.176-2.824-2.766-2.824-.973 0-1.73.444-2.103 1.243h-.11c-.076-1.58.582-2.67 1.619-2.67.57 0 1.03.302 1.164.77h2.091C24.674 12.005 23.34 11 21.645 11 19.393 11 18 12.735 18 15.536c0 1.255.297 2.32.862 3.078.606.9 1.584 1.386 2.778 1.386zm-.143-1C20.653 19 20 18.335 20 17.483c0-.838.646-1.483 1.497-1.483.857 0 1.503.645 1.503 1.497C23 18.34 22.34 19 21.497 19zm-8.04 2C15.59 21 17 19.706 17 17.812c0-1.707-1.201-2.94-2.88-2.94-.908 0-1.533.353-1.877.9h-.116l.165-2.035h4.15V12h-5.884l-.417 5.132h1.98c.282-.444.723-.723 1.348-.723.822 0 1.41.583 1.41 1.457 0 .857-.582 1.415-1.404 1.415-.741 0-1.33-.425-1.434-1.068H10c.03 1.59 1.404 2.787 3.457 2.787z', fill='#FFF', fill-rule='evenodd')
+        h2.h2= work.name
     .content
       .ol
-        .container
-          h3.h3= work.description
+        h3.h3= work.description
 
       .gl
         svg(width='0', height='0', xmlns='http://www.w3.org/2000/svg')
           clipPath#clipPath
             path(d='M17.601 17C40.593-5.968 159.977-5.363 182.364 17c23.59 23.565 23.438 141.173 0 164.586-24.585 24.559-140.192 24.545-164.763 0C-6.115 157.895-5.617 40.193 17.601 17z' width="200" height="200")
    
+        if work.gallery
+          .columns.is-multiline.is-centered
+            each item in work.gallery
+              .column.is-200
+                img(src=item.url)
 
-        .container
+      .dt
+        .columns.is-multiline
+          .column.typography
+            h3.h3 Background
+            div!= work.background
+          .column.is-4.typography
+            h3.h3 Details
+            p 
+              if work.url
+                a(href=work.url, target="blank") Visit #{work.name}
+            ul.tags
+              each tag in work.tags
+                li= tag
+
+
+      .sc
+        .inner
           .columns
             .column
-              img(src=`https://placehold.it/200x200?text=image1`)
+              img(src="https://placehold.it/600x800&text=screenshot1" class="img-responsive")
             .column
-              img(src=`https://placehold.it/200x200?text=image2`)
-            .column
-              img(src=`https://placehold.it/200x200?text=image3`)
+               img(src="https://placehold.it/600x800&text=screenshot2" class="img-responsive")
   
 
   .container
     hr
-    .codeContent
-      code
-        pre= h.dump(work)
+    //- .codeContent
+    //-   code
+    //-     pre= h.dump(work)
