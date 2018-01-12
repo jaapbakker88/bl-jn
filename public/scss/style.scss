@@ -106,7 +106,7 @@ section#services {
 
 .ticker {
 	display: flex;
-	transform: rotate(3deg);
+	// transform: rotate(3deg);
 	transform-origin: 0 0 100%;
 	&:hover .work__grid {
 		animation-play-state: paused;
