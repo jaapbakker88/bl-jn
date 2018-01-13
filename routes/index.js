@@ -24,9 +24,9 @@ router.get('/about', function(req, res){
   res.render('about');
 });
 
-router.get('/projects', function (req, res) {
-  res.send('projects overview');
-});
+// router.get('/projects', function (req, res) {
+//   res.send('projects overview');
+// });
 
 router.get('/projects/:slug', function(req,res){
 	Work.find({slug: req.params.slug}, function(err, work){
