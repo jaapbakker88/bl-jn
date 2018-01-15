@@ -5,6 +5,7 @@ block content
     h3.h3 Editing #{work.name} 
         h4.h4
           a(href=`/admin/work/${work.id}/gallery`) View Gallery
+          a(href=`/admin/work/${work.id}/screenshots`) View Screenshots
 
         form(action=`/admin/work/${work.id}/edit?_method=PUT` method="POST" enctype="multipart/form-data")
           .columns

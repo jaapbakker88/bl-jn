@@ -43,11 +43,9 @@ block content
         .sc
           .inner
             .columns
-              .column
-                img(src="https://placehold.it/600x800&text=screenshot1" class="img-responsive")
-              .column
-                 img(src="https://placehold.it/600x800&text=screenshot2" class="img-responsive")
-  
+              each item in work.screenshots
+                .column
+                  img(src=item.url, class="img-responsive")
 
   //- .container
   //-   hr

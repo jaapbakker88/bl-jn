@@ -373,8 +373,7 @@ body {
     background: #f8f8ff; }
 
 .project .sc {
-  max-width: 100%;
-  background: #184468; }
+  max-width: 100%; }
   .project .sc .inner {
     width: 900px;
     max-width: 100%;
@@ -387,10 +386,7 @@ body {
       max-width: 48%;
       -webkit-box-sizing: content-box;
               box-sizing: content-box;
-      padding-bottom: 0 img;
-        padding-bottom-display: block; }
-      .project .sc .inner .column:nth-child(1) {
-        margin-top: 4rem; }
+      padding-bottom: 0; }
 
 .admin {
   margin-bottom: 200px;

@@ -13,6 +13,10 @@ var workSchema = new mongoose.Schema({
   	name: String,
   	url: String
   }],
+  screenshots: [{
+    name: String,
+    url: String
+  }],
   tags: [String],
   url: {type: String, default: ''},
   background: {type: String, default: ''}

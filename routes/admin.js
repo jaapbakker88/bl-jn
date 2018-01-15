@@ -63,11 +63,22 @@ router.get('/work/:id/gallery', function(req, res) {
 	})
 })
 
-router.put('/work/:id/gallery', upload.single('image'), function(req, res) {
+router.get('/work/:id/screenshots', function(req, res) {
+	Work.findById(req.params.id, function(err, work) {
+		if(err || !work) {
+			console.log(err);
+			res.redirect('/admin');
+		} else {
+			res.render('admin/screenshots', {work: work})
+		}
+	})
+})
+
+router.put('/work/:id/screenshots', upload.single('image'), function(req, res) {
 	if(req.file.secure_url) {
 		Work.update(
 	    	{ _id: req.params.id },
-	    	{ $push: { gallery: {name: req.file.name, url: req.file.secure_url } } }, function(err, work){
+	    	{ $push: { screenshots: {name: req.file.name, url: req.file.secure_url } } }, function(err, work){
 	    	if (err) {
 	    		console.log(err)
 	    		res.redirect('back');
