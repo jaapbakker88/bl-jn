@@ -19,6 +19,7 @@ var workSchema = new mongoose.Schema({
   }],
   tags: [String],
   url: {type: String, default: ''},
+  github: {type: String, default: ''},
   background: {type: String, default: ''}
 },
 {
