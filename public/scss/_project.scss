@@ -126,3 +126,12 @@
     }
   }
 }
+
+.project .icon-combi {
+  display: flex;
+  .github {
+        svg {
+              transform: translateY(7px);
+        }
+  }
+}

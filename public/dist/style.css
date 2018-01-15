@@ -388,6 +388,15 @@ body {
               box-sizing: content-box;
       padding-bottom: 0; }
 
+.project .icon-combi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .project .icon-combi .github svg {
+    -webkit-transform: translateY(7px);
+        -ms-transform: translateY(7px);
+            transform: translateY(7px); }
+
 .admin {
   margin-bottom: 200px;
   margin-top: 100px; }
