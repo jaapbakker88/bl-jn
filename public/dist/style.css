@@ -742,10 +742,11 @@ section#contact {
   background: #f8f8ff;
   padding-top: 4rem;
   padding-bottom: 2rem; }
+  section#contact h3 {
+    margin-bottom: 4rem; }
   section#contact .map {
     width: 100%;
-    height: 200px;
-    background: url("https://placehold.it/400x200");
+    height: 300px;
     border-radius: 10px;
     -o-object-fit: cover;
        object-fit: cover; }
