@@ -12,7 +12,11 @@ router.get('/projects', (req, res) => {
     .catch(err => err);
 });
 
-router.get('/projects/:id', projectController.getProject);
+router.get('/projects/:id', (req, res) => {
+   projectController.getProjectById(req.params.id)
+    .then(project => res.json(project))
+    .catch(err => err);
+});
 router.post('/projects', projectController.createProject);
 router.put('/projects/:id/edit', projectController.updateProject);
 router.delete('/projects/:id', projectController.destroyProject);
