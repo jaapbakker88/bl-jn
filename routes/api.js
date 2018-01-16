@@ -6,7 +6,12 @@ var postController = require('../controllers/postController');
 
 
 // WORK
-router.get('/projects', projectController.getProjects);
+router.get('/projects', (req, res) => {
+  projectController.getProjects()
+    .then(projects => res.json(projects))
+    .catch(err => err);
+});
+
 router.get('/projects/:id', projectController.getProject);
 router.post('/projects', projectController.createProject);
 router.put('/projects/:id/edit', projectController.updateProject);
