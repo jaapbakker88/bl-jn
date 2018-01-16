@@ -8,15 +8,22 @@ var postController = require('../controllers/postController');
 // WORK
 router.get('/projects', (req, res) => {
   projectController.getProjects()
-    .then(projects => res.json(projects))
+    .then(projects => {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.json(projects)
+    })
     .catch(err => err);
 });
 
 router.get('/projects/:id', (req, res) => {
    projectController.getProjectById(req.params.id)
-    .then(project => res.json(project))
+    .then(project => {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.json(project);
+    })
     .catch(err => err);
 });
+
 router.post('/projects', projectController.createProject);
 router.put('/projects/:id/edit', projectController.updateProject);
 router.delete('/projects/:id', projectController.destroyProject);
